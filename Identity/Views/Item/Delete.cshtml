@@ -1,0 +1,62 @@
+﻿@model Identity.Models.Item
+<form asp-controller="Item" asp-action="DeletePost" method="post">
+    <input asp-for="Id" hidden />
+    <div class="border p-3">
+
+        <div class="form-group row">
+
+            <h2 class="text-primary"> Delete Item</h2>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row">
+                    <div class="col-4">
+                        Item Id
+                    </div>
+                    <div class="col-4">
+                        Item Name
+                    </div>
+
+                    <div class="col-4">
+                        Price
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-4">
+                        <input asp-for="Id" disabled class="form-control" />
+
+                    </div>
+                    <div class="col-4">
+                        <input asp-for="ItemName" disabled class="form-control" />
+
+                    </div>
+
+                    <div class="col-4">
+                        <input asp-for="Price" disabled class="form-control" />
+
+                    </div>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <div class="col-8 text-center row">
+                        <div class="col-4">
+                            <input type="submit" class="btn btn-danger w-75" value="Delete" />
+                        </div>
+                        <div class="col-4">
+                            <a asp-action="Index" class="btn btn-success">Back</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</form>
+
+
+.

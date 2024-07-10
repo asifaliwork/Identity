@@ -1,0 +1,34 @@
+﻿@using Microsoft.AspNetCore.Identity
+    @model IEnumerable<IdentityRole>
+@{
+    ViewData["Title"] = "ROLES";
+}
+
+@if (User.IsInRole(Identity.Utilities.Helper.Admin))
+{
+    
+
+<h1 class="bg-info text-white">All Roles</h1>
+    <a asp-action="Create" class="btn btn-secondary">Create a Role</a>
+
+    <table class="table table-sm table-bordered table-bordered">
+        <tr><th>ID</th><th>Name</th></tr>
+        @foreach (var item in Model)
+    {
+        <tr>
+            <td width="30%">@item.Id</td>
+            <td width="30%">@item.Name</td>
+           
+            <td width="30%">
+                <div class="w-100 btn-group" role="group">
+                    <a asp-controller="Role" asp-action="Update" asp-route-Id="@item.Id" class="btn btn-primary mx-1">Update</a>
+                    <a asp-controller="Role" asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-danger mx-1">Delete</a>
+                </div>
+            </td>
+        </tr>
+    }
+    </table>
+    }
+ <h1>
+    This portion is for Admins
+ </h1>
